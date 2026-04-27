@@ -1,0 +1,35 @@
+/* Mobile styles (default) */
+body {
+    font-size: 1.2rem;
+    margin: 0;
+    background-color: grey;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background-color: white;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Tablet (min width 768px */
+@media (min-width: 768) {
+    .container {
+        max-width: 800px;
+    }
+}
+
+/* Desktop (min width 1024px */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1000px;
+    }
+    img {
+        display: inline;
+    }
+}
