@@ -3,7 +3,6 @@
 /* TODO:
  *
  * h1 color
- * body font-family
  * font-size
  * margins and padding
  * image scaling
@@ -15,7 +14,7 @@
 
 
 body {
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Open Sans', Roboto, Cantarell, 'Helvetica Neue', 'Helvetica', sans-serif;
     font-size: 1.2rem;
     margin: 0;
     background-color: grey;
