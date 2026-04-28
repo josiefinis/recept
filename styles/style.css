@@ -1,5 +1,21 @@
 /* Mobile styles (default) */
+
+/* TODO:
+ *
+ * h1 color
+ * body font-family
+ * font-size
+ * margins and padding
+ * image scaling
+ * check vertical spacing against reference
+ * mobile view final check
+ * desktop view final check
+ * (tablet view final check)
+ */
+
+
 body {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 1.2rem;
     margin: 0;
     background-color: grey;
