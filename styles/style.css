@@ -2,7 +2,6 @@
 
 /* TODO:
  *
- * style lists
  * check vertical spacing against reference
  * mobile view final check
  * desktop view final check
@@ -54,6 +53,16 @@ h2 {
 #subtitle {
     background-color: #ebebeb;
     padding: 16px;
+}
+
+ul,
+ol {
+    list-style-position: outside;
+    padding-left: 1.5rem;
+}
+
+li {
+    line-height: 2;
 }
 
 .container {
