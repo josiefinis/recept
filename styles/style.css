@@ -16,7 +16,7 @@ body {
     font-size: 1.2rem;
     margin: 0;
     color: #000000;
-    background-color: #dcacac;
+    background-color: rgba(161, 0, 0, 0.3)
 }
 
 #banner-image {
@@ -35,11 +35,11 @@ body {
 }
 
 h1 {
-    color: #a00000;
+    color: #a10000;
 }
 
 #subtitle {
-    background-color: #eaeaea;
+    background-color: #ebebeb;
 }
 
 .container {
