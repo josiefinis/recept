@@ -2,7 +2,6 @@
 
 /* TODO:
  *
- * check vertical spacing against reference
  * mobile view final check
  * desktop view final check
  * (tablet view final check)
@@ -56,6 +55,12 @@ body {
 }
 .box :last-child {
     margin-bottom: 0;
+}
+
+h1,
+h2,
+p {
+    margin-bottom: 16px;
 }
 
 h1 {
