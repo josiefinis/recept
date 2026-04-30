@@ -1,12 +1,5 @@
 /* Mobile styles (default) */
 
-/* TODO:
- *
- * mobile view final check
- * desktop view final check
- * (tablet view final check)
- */
-
 html {
   box-sizing: border-box;
 }
@@ -23,6 +16,12 @@ body {
     margin: 0;
     color: #000000;
     background-color: rgba(161, 0, 0, 0.3)
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background-color: #fcfcfc;
 }
 
 #banner-image {
@@ -85,12 +84,6 @@ ol {
 
 li {
     line-height: 2;
-}
-
-.container {
-    max-width: 600px;
-    margin: auto;
-    background-color: #fcfcfc;
 }
 
 .image-grid {
