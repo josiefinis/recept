@@ -3,8 +3,6 @@
 /* TODO:
  *
  * check vertical spacing against reference
- * 1px border round banner image
- * check borders
  * mobile view final check
  * desktop view final check
  * (tablet view final check)
@@ -34,6 +32,7 @@ body {
     object-fit: cover;
     display: block;
     margin: auto;
+    border: 1px solid #fcfcfc;
 }
 
 #content-area {
