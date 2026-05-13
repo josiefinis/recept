@@ -84,6 +84,7 @@ ol {
 
 li {
     line-height: 2;
+    text-indent: 0.3em;
 }
 
 .image-grid {
