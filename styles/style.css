@@ -18,13 +18,13 @@ body {
     background-color: rgba(161, 0, 0, 0.3)
 }
 
-.container {
+.responsive-container {
     max-width: 600px;
     margin: auto;
     background-color: #fcfcfc;
 }
 
-#banner-image {
+#banner img {
     width: 100%;
     height: 500px;
     object-fit: cover;
@@ -44,15 +44,15 @@ body {
     gap: 1.5rem;
 }
 
-.box {
+#content-area > * {
     width: 100%;
     margin: 0;
 }
 
-.box :first-child {
+#content-area > * :first-child {
     margin-top: 0;
 }
-.box :last-child {
+#content-area > * :last-child {
     margin-bottom: 0;
 }
 
@@ -102,14 +102,14 @@ li {
 
 /* Tablet (min width 768px */
 @media (min-width: 768) {
-    .container {
+    .responsive-container {
         max-width: 800px;
     }
 }
 
 /* Desktop (min width 1024px */
 @media (min-width: 1024px) {
-    .container {
+    .responsive-container {
         max-width: 1280px;
     }
 
