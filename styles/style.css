@@ -44,15 +44,16 @@ body {
     gap: 1.5rem;
 }
 
-#content-area > * {
+.box {
     width: 100%;
     margin: 0;
 }
 
-#content-area > * :first-child {
+.box :first-child {
     margin-top: 0;
 }
-#content-area > * :last-child {
+
+.box :last-child {
     margin-bottom: 0;
 }
 
