@@ -33,7 +33,7 @@ body {
     border: 1px solid #fcfcfc;
 }
 
-#content-area {
+main {
     display: flex;
     flex-direction: column;
     padding-top: 3rem;

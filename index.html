@@ -4,7 +4,7 @@
 <html lang="sv">
 
     <head>
-        <title>Pannkakor</title>
+        <title>Enkelt recept på pannkakor</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./styles/style.css">
@@ -17,14 +17,14 @@
                 <img src="./images/pannkakor-hallon.png" alt="En hög med tunna pannkakor, serverad med blåbär, hallon och grädde." title="Author: Kaj Tallungs. https://commons.wikimedia.org/wiki/File:Pannkakor_4.png">
             </header>
 
-            <main id="content-area">
+            <main aria-labelledby="recipe-name">
                 <header class="box">
-                    <h1>Enkelt recept på pannkakor</h1>
+                    <h1 id="recipe-name">Enkelt recept på pannkakor</h1>
                     <p id="subtitle">Gör traditionella tunna pannkakor med detta enkla och goda pannkaksrecept.</p>
                 </header>
 
-                <section id="ingredients" class="box">
-                    <h2>Ingredienser</h2>
+                <section aria-labelledby="ingredients-heading" class="box">
+                    <h2 id="ingredients-heading">Ingredienser</h2>
                     <p>För 4 portioner</p>
                     <ul>
                         <li>2 1/2 dl vetemjöl</li>
@@ -36,8 +36,8 @@
                     </ul>
                 </section>
 
-                <section id="method" class="box">
-                    <h2>Så här gör du</h2>
+                <section aria-labelledby="method-heading" class="box">
+                    <h2 id="method-heading">Så här gör du</h2>
                     <ol>
                         <li>Blanda mjöl och salt i en bunke.</li>
                         <li>Vispa i hälften av mjölken och vispa till en slät smet.</li>
@@ -48,8 +48,9 @@
                     </ol>
                 </section>
 
-                <section id="serving-suggestion" class="box">
-                    <h2>Serveringsförslag</h2>
+                <!-- TODO: consider how to handle attributions better. Excuse to try out figure + figcaption maybe. -->
+                <section aria-labelledby="serving-suggestions-heading" class="box">
+                    <h2 id="serving-suggestions-heading">Serveringsförslag</h2>
                     <div class="image-grid">
                         <img src="./images/crepes-con-chocolate.jpg" alt="Två vikta pannkakor med chokladsås och flingsalt." title="Author: Juan Fernandéz. https://commons.wikimedia.org/wiki/File:Crepes_con_chocolate.jpg">
                         <img src="./images/mango-crepes.jpg" alt="En tunn pannkaka serverad med mango, smältande kulor vaniljglass och färsk mynta." title="Author:Alpha. https://commons.wikimedia.org/wiki/File:Mango_Crepes_-_close-up_-_Green_Tangerine_VND169k_set_lunch_%284729783995%29.jpg">
