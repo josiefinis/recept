@@ -14,7 +14,18 @@
         <div class="responsive-container">
 
             <header id="banner">
-                <img src="./images/pannkakor-hallon-1280x960.jpg" alt="En hög med tunna pannkakor, serverad med blåbär, hallon och grädde." title="Author: Kaj Tallungs. https://commons.wikimedia.org/wiki/File:Pannkakor_4.png">
+                <figure>
+                    <!-- Should figure have role and aria-label as described at 
+                        https://www.scottohara.me/blog/2019/01/21/how-do-you-figure.html#wrapping-up  
+                        Doesn't figure already have role? 
+                        Something more descriptive than this figcaption for aria-label?
+                    -->
+                    <img src="./images/pannkakor-hallon-1280x960.jpg" alt="En hög med tunna pannkakor, serverad med blåbär, hallon och grädde.">
+                    <figcaption><small>
+                        Skapare: Kaj Tallungs. 
+                        <a aria-label="licesnse" href="https://commons.wikimedia.org/wiki/File:Pannkakor_4.png">(cc)</a>
+                    </small></figcaption> 
+                </figure>
             </header>
 
             <main aria-labelledby="recipe-name">
@@ -48,14 +59,27 @@
                     </ol>
                 </section>
 
-                <!-- TODO: consider how to handle attributions better. Excuse to try out figure + figcaption maybe. -->
                 <section aria-labelledby="serving-suggestions-heading" class="box">
                     <h2 id="serving-suggestions-heading">Serveringsförslag</h2>
                     <div class="image-grid">
-                        <img src="./images/crepes-con-chocolate.jpg" alt="Två vikta pannkakor med chokladsås och flingsalt." title="Author: Juan Fernandéz. https://commons.wikimedia.org/wiki/File:Crepes_con_chocolate.jpg">
-                        <img src="./images/mango-crepes.jpg" alt="En tunn pannkaka serverad med mango, smältande kulor vaniljglass och färsk mynta." title="Author:Alpha. https://commons.wikimedia.org/wiki/File:Mango_Crepes_-_close-up_-_Green_Tangerine_VND169k_set_lunch_%284729783995%29.jpg">
+                        <figure>
+                            <img src="./images/crepes-con-chocolate.jpg" alt="Två vikta pannkakor med chokladsås och flingsalt.">
+                            <figcaption><small>
+                                Skapare: Juan Fernandéz. 
+                                <a aria-label="license" href="https://commons.wikimedia.org/wiki/File:Crepes_con_chocolate.jpg">(cc)</a>
+                            </small></figcaption>
+                        </figure>
+                        <figure>
+                            <img src="./images/mango-crepes.jpg" alt="En tunn pannkaka serverad med mango, smältande kulor vaniljglass och färsk mynta.">
+                            <figcaption><small>
+                                Skapare: Alpha. 
+                                <a aria-label="license" href="https://commons.wikimedia.org/wiki/File:Mango_Crepes_-_close-up_-_Green_Tangerine_VND169k_set_lunch_%284729783995%29.jpg">(cc)</a>
+                            </small></figcaption>
+                        </figure>
                     </div>
                 </section>
+                <footer>
+                </footer>
             </main>
         </div>
     </body>
