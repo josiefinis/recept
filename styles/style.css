@@ -102,23 +102,47 @@ textarea:not([rows]) {
 
 
 /**********************************************************************/
-/* /reset */
+/* Variables (custom properties) */
 /**********************************************************************/
+
+:root {
+    /* font families */
+    --ff-main: 'Open Sans', Roboto, Cantarell, 'Helvetica Neue', 'Helvetica', sans-serif;
+    --ff-headings: 'Josefin Sans', serif;
+
+    /* font sizes */
+    --fs-larger-heading: 2.5rem;
+    --fs-large-heading: 2rem;
+    --fs-larger: 1.75rem;
+    --fs-large: 1.5rem;
+    --fs-normal: 1rem;
+    --fs-small: 0.75rem;
+
+    /* font weights */
+    --fw-bold: 600;
+
+    /* colors */
+    --clr-red: #a10000;
+    --clr-transparent-red: rgba(161, 0, 0, 0.3);
+    --clr-off-white: #fcfcfc;
+    --clr-light-gray: #ebebeb;
+    --clr-black: #000000;
+}
+
 
 /* Mobile styles (default) */
 
 body {
-    font-family: 'Open Sans', Roboto, Cantarell, 'Helvetica Neue', 'Helvetica', sans-serif;
-    font-size: 1rem;
-    margin: 0;
-    color: #000000;
-    background-color: rgba(161, 0, 0, 0.3);
+    font-family: var(--ff-main);
+    font-size: var(--fs-normal);
+    color: var(--clr-black);
+    background-color: var(--clr-transparent-red);
 }
 
 .responsive-container {
     max-width: 600px;
     margin: auto;
-    background-color: #fcfcfc;
+    background-color: var(--clr-off-white);
 }
 
 #banner img {
@@ -127,7 +151,7 @@ body {
     object-fit: cover;
     display: block;
     margin: auto;
-    border: 1px solid #fcfcfc;
+    border: 1px solid var(--clr-off-white);
 }
 
 main {
@@ -161,16 +185,20 @@ p {
 }
 
 h1 {
-    color: #a10000;
-    font-size: 1.75rem;
+    font-family: var(--ff-headings);
+    font-size: var(--fs-larger-heading);
+    font-weight: var(--fw-bold);
+    color: var(--clr-red);
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-family: var(--ff-headings);
+    font-size: var(--fs-large-heading);
+    font-weight: var(--fw-bold);
 }
 
 #subtitle {
-    background-color: #ebebeb;
+    background-color: var(--clr-light-gray);
     padding: 1rem;
 }
 
