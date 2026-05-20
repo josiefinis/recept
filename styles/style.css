@@ -108,7 +108,7 @@ textarea:not([rows]) {
 :root {
     /* font families */
     --ff-main: 'Open Sans', Roboto, Cantarell, 'Helvetica Neue', 'Helvetica', sans-serif;
-    --ff-headings: 'Josefin Sans', serif;
+    --ff-headings: 'Josefin Sans', 'Open Sans', Roboto, Cantarell, 'Helvetica Neue', 'Helvetica', sans-serif;
 
     /* font sizes */
     --fs-larger-heading: 2.5rem;
