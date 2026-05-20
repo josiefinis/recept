@@ -146,11 +146,7 @@ textarea:not([rows]) {
     background-color: var(--clr-off-white);
 }
 
-.figure__img_style_hero {
-    height: 500px;
-    border: 1px solid var(--clr-off-white);
-}
-
+/* RECIPE */
 .recipe {
     display: flex;
     flex-direction: column;
@@ -174,6 +170,8 @@ textarea:not([rows]) {
     padding: 1rem;
 }
 
+
+/* SECTION */
 .section__heading {
     font-family: var(--ff-headings);
     font-size: var(--fs-large-heading);
@@ -185,6 +183,8 @@ textarea:not([rows]) {
     margin: 1rem 0;
 }
 
+
+/* LIST */
 .list {
     list-style-position: outside;
     padding-left: 1.5rem;
@@ -195,6 +195,8 @@ textarea:not([rows]) {
     text-indent: 0.3em;
 }
 
+
+/* FLEX-CONTAINER */
 .flex-container {
     display: flex;
     flex-wrap: wrap;
@@ -207,11 +209,20 @@ textarea:not([rows]) {
     width: 100%;
 }
 
+
+/* FIGURE */
 .figure__caption {
     text-align: right;
     padding-right: 2px;
 }
 
+.figure__img_style_hero {
+    height: 500px;
+    border: 1px solid var(--clr-off-white);
+}
+
+
+/* LINK */
 .link {
     text-decoration: none;
 }
@@ -220,12 +231,16 @@ textarea:not([rows]) {
     text-decoration: underline;
 }
 
+
+
 /* Tablet (min width 768px */
 @media (min-width: 768) {
     .responsive-container {
         max-width: 800px;
     }
 }
+
+
 
 /* Desktop (min width 1024px */
 @media (min-width: 1024px) {
