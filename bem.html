@@ -15,34 +15,35 @@
     <body class="body">
         <div class="responsive-container">
 
-            <header class="banner">
-                <figure class="figure banner__figure">
+            <header class="hero">
+                <figure class="figure hero__figure">
                     <!-- Should figure have role and aria-label as described at 
                         https://www.scottohara.me/blog/2019/01/21/how-do-you-figure.html#wrapping-up  
                         Doesn't figure already have role? 
                         Something more descriptive than this figcaption for aria-label?
                     -->
-                    <!-- is this a valid use of mix? -->
                     <img 
-                        class="figure__img banner__img" 
+                        class="figure__img figure__img_style_hero" 
                         width="1280"
                         height="960"
                         src="./images/pannkakor-hallon-1280x960.jpg" 
                         alt="En hög med tunna pannkakor, serverad med blåbär, hallon och grädde."
                     />
-                    <figcaption class="figure__caption banner__caption"><small>
-                        Skapare: Kaj Tallungs. 
-                        <a class="link" aria-label="license" href="https://commons.wikimedia.org/wiki/File:Pannkakor_4.png">(cc)</a>
-                    </small></figcaption> 
+                    <figcaption class="figure__caption">
+                        <small>
+                            Skapare: Kaj Tallungs. 
+                            <a class="link" aria-label="license" href="https://commons.wikimedia.org/wiki/File:Pannkakor_4.png">(cc)</a>
+                        </small>
+                    </figcaption> 
                 </figure>
             </header>
 
-            <main class="main-content" aria-labelledby="recipe-name">
-                <header class=main-content__header>
-                    <h1 class="main-content__heading" id="recipe-name">Enkelt recept på pannkakor</h1>
+            <main class="recipe" aria-labelledby="recipe-name">
+                <header class=recipe__header>
+                    <h1 class="recipe__name" id="recipe-name">Enkelt recept på pannkakor</h1>
                 </header>
 
-                <p class="main-content__text main-content__text_style_highlight">Gör traditionella tunna pannkakor med detta enkla och goda pannkaksrecept.</p>
+                <p class="recipe__description">Gör traditionella tunna pannkakor med detta enkla och goda pannkaksrecept.</p>
                 <section class="section" aria-labelledby="ingredients-heading">
                     <h2 class="section__heading" id="ingredients-heading">Ingredienser</h2>
                     <p class="section__text">För 4 portioner</p>
@@ -71,7 +72,7 @@
                 <section class="section" aria-labelledby="serving-suggestions-heading">
                     <h2 class="section__heading" id="serving-suggestions-heading">Serveringsförslag</h2>
                     <div class="flex-container">
-                        <figure class="flex-container__item" class="figure">
+                        <figure class="figure flex-container__item">
                             <img 
                                 class="figure__img" 
                                 width="960"
@@ -90,7 +91,7 @@
                                 </a>
                             </small></figcaption>
                         </figure>
-                        <figure class="flex-container__item" class="figure">
+                        <figure class="figure flex-container__item">
                             <img 
                                 class="figure__img" 
                                 width="960"

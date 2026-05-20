@@ -146,12 +146,12 @@ textarea:not([rows]) {
     background-color: var(--clr-off-white);
 }
 
-.banner__img {
+.figure__img_style_hero {
     height: 500px;
     border: 1px solid var(--clr-off-white);
 }
 
-.main-content {
+.recipe {
     display: flex;
     flex-direction: column;
     padding-top: 3rem;
@@ -162,14 +162,14 @@ textarea:not([rows]) {
     gap: 1.5rem;
 }
 
-.main-content__heading {
+.recipe__name {
     font-family: var(--ff-headings);
     font-size: var(--fs-larger-heading);
     font-weight: var(--fw-bold);
     color: var(--clr-red);
 }
 
-.main-content__text_style_highlight {
+.recipe__description {
     background-color: var(--clr-light-gray);
     padding: 1rem;
 }
@@ -233,7 +233,7 @@ textarea:not([rows]) {
         max-width: 1280px;
     }
 
-    .main-content {
+    .recipe {
         padding-left: 3rem;
         padding-right: 3rem;
     }
