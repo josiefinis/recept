@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+
+<html lang="sv">
+
+    <head>
+        <title>Enkelt recept på pannkakor</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=josefin-sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"/>
+        <link rel="stylesheet" href="./styles/bem-style.css">
+    </head>
+
+    <body class="body">
+        <div class="responsive-container">
+
+            <header class="banner">
+                <figure class="figure banner__figure">
+                    <!-- Should figure have role and aria-label as described at 
+                        https://www.scottohara.me/blog/2019/01/21/how-do-you-figure.html#wrapping-up  
+                        Doesn't figure already have role? 
+                        Something more descriptive than this figcaption for aria-label?
+                    -->
+                    <!-- is this a valid use of mix? -->
+                    <img 
+                        class="figure__img banner__img" 
+                        width="1280"
+                        height="960"
+                        src="./images/pannkakor-hallon-1280x960.jpg" 
+                        alt="En hög med tunna pannkakor, serverad med blåbär, hallon och grädde."
+                    />
+                    <figcaption class="figure__caption banner__caption"><small>
+                        Skapare: Kaj Tallungs. 
+                        <a class="link" aria-label="license" href="https://commons.wikimedia.org/wiki/File:Pannkakor_4.png">(cc)</a>
+                    </small></figcaption> 
+                </figure>
+            </header>
+
+            <main class="main-content" aria-labelledby="recipe-name">
+                <header class=main-content__header>
+                    <h1 class="main-content__heading" id="recipe-name">Enkelt recept på pannkakor</h1>
+                </header>
+
+                <p class="main-content__text main-content__text_style_highlight">Gör traditionella tunna pannkakor med detta enkla och goda pannkaksrecept.</p>
+                <section class="section" aria-labelledby="ingredients-heading">
+                    <h2 class="section__heading" id="ingredients-heading">Ingredienser</h2>
+                    <p class="section__text">För 4 portioner</p>
+                    <ul class="list">
+                        <li class="list__item">2 1/2 dl vetemjöl</li>
+                        <li class="list__item">1/2 tsk salt</li>
+                        <li class="list__item">6 dl mjölk</li>
+                        <li class="list__item">3 ägg</li>
+                        <li class="list__item">smör (till stekning)</li>
+                        <li class="list__item">sylt, bär eller frukt till servering</li>
+                    </ul>
+                </section>
+
+                <section class="section" aria-labelledby="method-heading">
+                    <h2 class="section__heading" id="method-heading">Så här gör du</h2>
+                    <ol class="list">
+                        <li class="list__item">Blanda mjöl och salt i en bunke.</li>
+                        <li class="list__item">Vispa i hälften av mjölken och vispa till en slät smet.</li>
+                        <li class="list__item">Vispa i resten av mjölken och äggen.</li>
+                        <li class="list__item">Låt smeten vila i ca 10 minuter.</li>
+                        <li class="list__item">Stek tunna pannkakor i lite smör, för varje pannkaka, i en stek- eller pannkakspanna.</li>
+                        <li class="list__item">Servera med sylt, bär eller frukt.</li>
+                    </ol>
+                </section>
+
+                <section class="section" aria-labelledby="serving-suggestions-heading">
+                    <h2 class="section__heading" id="serving-suggestions-heading">Serveringsförslag</h2>
+                    <div class="flex-container">
+                        <figure class="flex-container__item" class="figure">
+                            <img 
+                                class="figure__img" 
+                                width="960"
+                                height="640"
+                                src="./images/crepes-con-chocolate-960x640.jpg" 
+                                alt="Två vikta pannkakor med chokladsås och flingsalt."
+                            />
+                            <figcaption class="figure__caption"><small>
+                                Skapare: Juan Fernandéz. 
+                                <a 
+                                    class="link" 
+                                    aria-label="license" 
+                                    href="https://commons.wikimedia.org/wiki/File:Crepes_con_chocolate.jpg"
+                                >
+                                    (cc)
+                                </a>
+                            </small></figcaption>
+                        </figure>
+                        <figure class="flex-container__item" class="figure">
+                            <img 
+                                class="figure__img" 
+                                width="960"
+                                height="640"
+                                src="./images/mango-crepes-960x640.jpg" 
+                                alt="En tunn pannkaka serverad med mango, smältande kulor vaniljglass och färsk mynta."
+                            />
+                            <figcaption class="figure__caption"><small>
+                                Skapare: Alpha. 
+                                <a 
+                                    class="link" 
+                                    aria-label="license" 
+                                    href="https://commons.wikimedia.org/wiki/File:Mango_Crepes_-_close-up_-_Green_Tangerine_VND169k_set_lunch_%284729783995%29.jpg"
+                                >
+                                    (cc)
+                                </a>
+                            </small></figcaption>
+                        </figure>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </body>
+</html>
