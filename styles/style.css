@@ -237,7 +237,7 @@ body { /* var försiktigt med att använda body. Should I change this? */
     .banner__heading {
         font-family: var(--ff-banner-heading);
         font-size: var(--fs-larger-heading);
-        padding-left: var(--space-large);
+        padding-left: var(--space-medium);
     }
 
     .menu {
