@@ -53,6 +53,7 @@ button, input, label {
 img, picture, video, canvas, svg { 
     display: block;
     max-width: 100%;
+    object-fit: cover;
 }
 
 /* 7. Inherit fonts for form controls (Comeau, 2026) */
@@ -127,12 +128,19 @@ textarea:not([rows]) {
     --clr-off-white: #fcfcfc;
     --clr-light-gray: #ebebeb;
     --clr-black: #000000;
+
+    /* spacing */
+    --flow-space: 1.5rem;
 }
 
 
 /* Mobile styles (default) */
 
-body {
+/**********************************************************************/
+/* Global */
+/**********************************************************************/
+
+body { /* var försiktigt med att använda body. Should I change this? */
     font-family: var(--ff-main);
     font-size: var(--fs-normal);
     color: var(--clr-black);
@@ -145,7 +153,53 @@ body {
     background-color: var(--clr-off-white);
 }
 
-#banner img {
+/**********************************************************************/
+/* Composition */
+/**********************************************************************/
+
+.flow > * + * {
+  margin-top: var(--flow-space, 1em);
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--flow-space);
+
+
+    > * {
+        flex: 0 1 auto;
+        margin: 0;
+        width: 100%;
+    }
+
+    img {                           /* TODO: fix image sizing better */
+        width: 100%;
+        height: 467px;
+    }
+}
+
+
+/**********************************************************************/
+/* Utilities */
+/**********************************************************************/
+
+.main-wrapper {
+    padding: 3rem 1rem 4rem;
+    margin-bottom: 4rem;
+}
+
+.highlight {
+    background-color: var(--clr-light-gray);
+    padding: 1rem;
+}
+
+
+/**********************************************************************/
+/* Blocks */
+/**********************************************************************/
+
+.hero img {
     width: 100%;
     height: 500px;
     object-fit: cover;
@@ -154,86 +208,45 @@ body {
     border: 1px solid var(--clr-off-white);
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    padding-top: 3rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-bottom: 4rem;
-    margin-bottom: 4rem;
-    gap: 1.5rem;
+.recipe {
+    :is(h1, h2, h3, h4) {
+        font-family: var(--ff-headings);
+        font-weight: var(--fw-bold);
+    }
+
+    h1 {
+        font-size: var(--fs-larger-heading);
+        color: var(--clr-red);
+    }
+
+    h2 {
+        font-size: var(--fs-large-heading);
+    }
 }
 
-.box {
-    width: 100%;
-    margin: 0;
-}
-
-.box :first-child {
-    margin-top: 0;
-}
-
-.box :last-child {
-    margin-bottom: 0;
-}
-
-h1,
-h2,
-p {
-    margin-bottom: 1rem;
-}
-
-h1 {
-    font-family: var(--ff-headings);
-    font-size: var(--fs-larger-heading);
-    font-weight: var(--fw-bold);
-    color: var(--clr-red);
-}
-
-h2 {
-    font-family: var(--ff-headings);
-    font-size: var(--fs-large-heading);
-    font-weight: var(--fw-bold);
-}
-
-#subtitle {
-    background-color: var(--clr-light-gray);
-    padding: 1rem;
-}
-
-ul,
-ol {
+.list {
     list-style-position: outside;
     padding-left: 1.5rem;
+
+    .list__item {
+        line-height: 2;
+        text-indent: 0.3em;
+    }
 }
 
-li {
-    line-height: 2;
-    text-indent: 0.3em;
+.figure {
+    .figure__caption {
+        text-align: right;
+        padding: 2px;
+    }
 }
 
-.image-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
 
-.image-grid > * {
-    flex: 0 1 auto;
-    margin: 0;
-    width: 100%;
-}
-
-.image-grid img {
-    width: 100%;
-    height: 467px;
-    object-fit: cover;
-}
-
-figcaption {
-    text-align: right;
-}
+/**********************************************************************/
+/* Exceptions */
+/**********************************************************************/
+        
+/* TODO: should these be somewhere else? */
 
 /* Tablet (min width 768px */
 @media (min-width: 768) {
@@ -248,13 +261,13 @@ figcaption {
         max-width: 1280px;
     }
 
-    main {
+    .main-wrapper {
         padding-left: 3rem;
         padding-right: 3rem;
     }
 
     /* Side by side images. */
-    .image-grid > * {
+    .flex-container > * {
         flex: 1 1 auto;
         width: 40%;
     }
