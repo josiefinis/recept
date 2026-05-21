@@ -108,6 +108,7 @@ textarea:not([rows]) {
 
 :root {
     /* font families */
+    --ff-banner-heading: 'Twinkle Star', handwriting;
     --ff-main: 'Open Sans', Roboto, Cantarell, 'Helvetica Neue', 'Helvetica', sans-serif;
     --ff-headings: 'Josefin Sans', 'Open Sans', Roboto, Cantarell, 'Helvetica Neue', 'Helvetica', sans-serif;
 
@@ -128,9 +129,14 @@ textarea:not([rows]) {
     --clr-off-white: #fcfcfc;
     --clr-light-gray: #ebebeb;
     --clr-black: #000000;
+    --clr-dark-red: #220000;
+    --clr-light-green: #6f6;
 
     /* spacing */
-    --flow-space: 1.5rem;
+    --space-small: 1rem;
+    --space-medium: 1.5rem;
+    --space-large: 3rem;
+    --space-larger: 4rem;
 }
 
 
@@ -158,7 +164,7 @@ body { /* var försiktigt med att använda body. Should I change this? */
 /**********************************************************************/
 
 .flow > * + * {
-  margin-top: var(--flow-space, 1em);
+    margin-top: var(--flow-space, 1.5em);
 }
 
 .flex-container {
@@ -184,31 +190,129 @@ body { /* var försiktigt med att använda body. Should I change this? */
 /* Utilities */
 /**********************************************************************/
 
-.main-wrapper {
-    padding: 3rem 1rem 4rem;
-    margin-bottom: 4rem;
-}
-
 .highlight {
     background-color: var(--clr-light-gray);
     padding: 1rem;
 }
 
+.m-top {
+    margin-top: var(--space-small);
+}
+
+.m-top-m {
+    margin-top: var(--space-medium);
+}
+
+.m-top-l {
+    margin-top: var(--space-large);
+}
+
+.m-top-xl {
+    margin-top: var(--space-larger);
+}
+
+.m-bottom-s {
+    margin-bottom: var(--space-small);
+}
+
+.m-bottom-m {
+    margin-bottom: var(--space-medium);
+}
+
+.m-bottom-l {
+    margin-bottom: var(--space-large);
+}
+
+.m-bottom-xl {
+    margin-bottom: var(--space-larger);
+}
+
+.m-side-s {
+    margin-left: var(--space-small);
+    margin-right: var(--space-small);
+}
+
+.m-side-m {
+    margin-left: var(--space-medium);
+    margin-right: var(--space-medium);
+}
+
+.m-side-l {
+    margin-left: var(--space-large);
+    margin-right: var(--space-large);
+}
+
+.m-side-xl {
+    margin-left: var(--space-larger);
+    margin-right: var(--space-larger);
+}
 
 /**********************************************************************/
 /* Blocks */
 /**********************************************************************/
 
-.hero img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    display: block;
-    margin: auto;
-    border: 1px solid var(--clr-off-white);
+.skip-link {
+    padding: var(--space-small);
+    background-color: var(--clr-light-green);
+    color: var(--clr-black);
+    position: absolute;
+    left: -1000px;
+
+    &:focus {
+        left: 0px;
+    }
+    
+}
+
+.banner {
+    background-color: var(--clr-dark-red);
+    color: var(--clr-off-white);
+    padding: var(--space-small);
+
+
+    .banner__heading {
+        font-family: var(--ff-banner-heading);
+        font-size: var(--fs-larger-heading);
+        padding-left: var(--space-large);
+    }
+
+    .menu {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .link {
+        color: var(--clr-off-white);
+    }
+}
+
+.hero {
+    img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        display: block;
+        margin: auto;
+        border: 1px solid var(--clr-off-white);
+    }
+
+    .hero__caption {
+        text-align: right;
+        padding: 2px;
+    }
 }
 
 .recipe {
+    padding-bottom: var(--space-larger);
+    margin-bottom: var(--space-larger);
+    --flow-space: 1.5rem;
+
+    > * + * {
+        margin-left: var(--space-small);
+        margin-right: var(--space-small);
+    }
+
     :is(h1, h2, h3, h4) {
         font-family: var(--ff-headings);
         font-weight: var(--fw-bold);
@@ -224,6 +328,11 @@ body { /* var försiktigt med att använda body. Should I change this? */
     }
 }
 
+.recipe__section > * {
+    --flow-space: 1rem;
+}
+
+
 .list {
     list-style-position: outside;
     padding-left: 1.5rem;
@@ -234,10 +343,18 @@ body { /* var försiktigt med att använda body. Should I change this? */
     }
 }
 
+
 .figure {
     .figure__caption {
         text-align: right;
-        padding: 2px;
+    }
+}
+
+.link {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
     }
 }
 
@@ -261,9 +378,9 @@ body { /* var försiktigt med att använda body. Should I change this? */
         max-width: 1280px;
     }
 
-    .main-wrapper {
-        padding-left: 3rem;
-        padding-right: 3rem;
+    .recipe > * + * {
+        margin-left: 3rem;
+        margin-right: 3rem;
     }
 
     /* Side by side images. */
