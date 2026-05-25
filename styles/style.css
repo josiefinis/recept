@@ -322,6 +322,14 @@ body { /* var försiktigt med att använda body. Should I change this? */
 /**********************************************************************/
 /* Exceptions */
 /**********************************************************************/
+
+.link[data-state="undecorated"] {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
         
 /* TODO: should these be somewhere else? */
 
