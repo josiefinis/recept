@@ -20,7 +20,7 @@ html {
 /* Remove default margin in favour of better control in authored CSS (Bell, 2023)*/
 body, h1, h2, h3, h4, p,
 figure, blockquote, dl, dd {
-    margin-block-end: 0;  /* TODO: Revisit this when you have better understanding of CSS. Don't understand Bell's explanation. */
+    margin-block-end: 0;  
 }
 
 body {
@@ -128,7 +128,7 @@ body { /* var försiktigt med att använda body. Should I change this? */
 /**********************************************************************/
 
 .flow > * + * {
-    margin-top: var(--flow-space, 1.5em);
+    margin-block-start: var(--flow-space, 1.5em);
 }
 
 .flex-container {
@@ -159,56 +159,52 @@ body { /* var försiktigt med att använda body. Should I change this? */
     padding: 1rem;
 }
 
-.m-top {
-    margin-top: var(--space-small);
+.m-bs-s {
+    margin-block-start: var(--space-small);
 }
 
-.m-top-m {
-    margin-top: var(--space-medium);
+.m-bs-m {
+    margin-block-start: var(--space-medium);
 }
 
-.m-top-l {
-    margin-top: var(--space-large);
+.m-bs-l {
+    margin-block-start: var(--space-large);
 }
 
-.m-top-xl {
-    margin-top: var(--space-larger);
+.m-bs-xl {
+    margin-block-start: var(--space-larger);
 }
 
-.m-bottom-s {
-    margin-bottom: var(--space-small);
+.m-be-s {
+    margin-block-end: var(--space-small);
 }
 
-.m-bottom-m {
-    margin-bottom: var(--space-medium);
+.m-be-m {
+    margin-block-end: var(--space-medium);
 }
 
-.m-bottom-l {
-    margin-bottom: var(--space-large);
+.m-be-l {
+    margin-block-end: var(--space-large);
 }
 
-.m-bottom-xl {
-    margin-bottom: var(--space-larger);
+.m-be-xl {
+    margin-block-end: var(--space-larger);
 }
 
-.m-side-s {
-    margin-left: var(--space-small);
-    margin-right: var(--space-small);
+.m-inline-s {
+    margin-inline: var(--space-small);
 }
 
-.m-side-m {
-    margin-left: var(--space-medium);
-    margin-right: var(--space-medium);
+.m-inline-m {
+    margin-inline: var(--space-medium);
 }
 
-.m-side-l {
-    margin-left: var(--space-large);
-    margin-right: var(--space-large);
+.m-inline-l {
+    margin-inline: var(--space-large);
 }
 
-.m-side-xl {
-    margin-left: var(--space-larger);
-    margin-right: var(--space-larger);
+.m-inline-xl {
+    margin-inline: var(--space-larger);
 }
 
 /**********************************************************************/
@@ -220,10 +216,10 @@ body { /* var försiktigt med att använda body. Should I change this? */
     background-color: var(--clr-light-green);
     color: var(--clr-black);
     position: absolute;
-    left: -1000px;
+    inset-block-start: -1000px;
 
     &:focus {
-        left: 0px;
+        inset-block-start: 0px;
     }
     
 }
@@ -237,7 +233,7 @@ body { /* var försiktigt med att använda body. Should I change this? */
     .banner__heading {
         font-family: var(--ff-banner-heading);
         font-size: var(--fs-larger-heading);
-        padding-left: var(--space-medium);
+        padding-inline-start: var(--space-medium);
     }
 
     .menu {
@@ -262,19 +258,18 @@ body { /* var försiktigt med att använda body. Should I change this? */
     }
 
     .hero__caption {
-        text-align: right;
+        text-align: end;
         padding: 2px;
     }
 }
 
 .recipe {
-    padding-bottom: var(--space-larger);
-    margin-bottom: var(--space-larger);
+    padding-block-end: var(--space-larger);
+    margin-block-end: var(--space-larger);
     --flow-space: 1.5rem;
 
     > * + * {
-        margin-left: var(--space-small);
-        margin-right: var(--space-small);
+        margin-inline: var(--space-small);
     }
 
     :is(h1, h2, h3, h4) {
@@ -285,6 +280,7 @@ body { /* var försiktigt med att använda body. Should I change this? */
     h1 {
         font-size: var(--fs-larger-heading);
         color: var(--clr-red);
+        margin-block-start: 3rem;
     }
 
     h2 {
@@ -299,7 +295,7 @@ body { /* var försiktigt med att använda body. Should I change this? */
 
 .list {
     list-style-position: outside;
-    padding-left: 1.5rem;
+    padding-inline-start: 1.5rem;
 
     .list__item {
         line-height: 2;
@@ -310,7 +306,7 @@ body { /* var försiktigt med att använda body. Should I change this? */
 
 .figure {
     .figure__caption {
-        text-align: right;
+        text-align: end;
     }
 }
 
@@ -343,8 +339,7 @@ body { /* var försiktigt med att använda body. Should I change this? */
     }
 
     .recipe > * + * {
-        margin-left: 3rem;
-        margin-right: 3rem;
+        margin-inline: 3rem;
     }
 
     /* Side by side images. */
