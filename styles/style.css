@@ -72,7 +72,7 @@ a:not([class]) {
 
 :root {
     /* font families */
-    --ff-banner-heading: 'Twinkle Star', handwriting;
+    --ff-logo: 'Twinkle Star', handwriting;
     --ff-main: 'Open Sans', Roboto, Cantarell, 'Helvetica Neue', 'Helvetica', sans-serif;
     --ff-headings: 'Josefin Sans', 'Open Sans', Roboto, Cantarell, 'Helvetica Neue', 'Helvetica', sans-serif;
 
@@ -156,7 +156,7 @@ body { /* var försiktigt med att använda body. Should I change this? */
 
 .highlight {
     background-color: var(--clr-light-gray);
-    padding: 1rem;
+    padding: var(--space-small);
 }
 
 .m-bs-s {
@@ -230,22 +230,49 @@ body { /* var försiktigt med att använda body. Should I change this? */
     padding: var(--space-small);
 
 
-    .banner__heading {
-        font-family: var(--ff-banner-heading);
-        font-size: var(--fs-larger-heading);
-        padding-inline-start: var(--space-medium);
-    }
-
-    .menu {
-        list-style: none;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-    }
-
     .link {
         color: var(--clr-off-white);
+        &:hover {
+            text-decoration: underline;
+            text-decoration-thickness: 3px;
+            text-underline-offset: var(--space-small);
+        }
     }
 }
+
+.nav__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav__item {
+    padding: var(--space-small);
+
+    &:first-child {
+        margin-inline-end: auto;
+    }
+    &:last-child {
+        margin-inline-start: auto;
+    }
+}
+
+
+.logo {
+    font-family: var(--ff-logo);
+    font-size: var(--fs-larger-heading);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-small);
+}
+
 
 .hero {
     img {
@@ -289,7 +316,7 @@ body { /* var försiktigt med att använda body. Should I change this? */
 }
 
 .recipe__section > * {
-    --flow-space: 1rem;
+    --flow-space: var(--space-small);
 }
 
 
@@ -330,15 +357,23 @@ body { /* var försiktigt med att använda body. Should I change this? */
         text-decoration: none;
     }
 }
+
         
-/* TODO: should these be somewhere else? */
+/**********************************************************************/
+/* Media Queries */
+/**********************************************************************/
 
 /* Tablet (min width 768px */
-@media (min-width: 768) {
+@media (min-width: 768px) {
     .responsive-container {
         max-width: 800px;
     }
+
+    .nav__list {
+        flex-direction: row;
+    }
 }
+
 
 /* Desktop (min width 1024px */
 @media (min-width: 1024px) {
@@ -350,12 +385,19 @@ body { /* var försiktigt med att använda body. Should I change this? */
         margin-inline: 3rem;
     }
 
+    .nav__list {
+        flex-direction: row;
+    }
+
+
     /* Side by side images. */
     .flex-container > * {
         flex: 1 1 auto;
         width: 40%;
     }
 }
+
+
 /**********************************************************************/
 /* References */
 /**********************************************************************/
