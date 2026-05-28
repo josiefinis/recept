@@ -44,6 +44,7 @@ img, picture, video, canvas, svg {
 /* Avoid text overflows (Comeau, 2026) */
 p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;  
+    hyphens: auto;
 }
 
 /* Improve line wrapping (Comeau, 2026) */
@@ -97,6 +98,7 @@ a:not([class]) {
     --clr-light-green: #6f6;
 
     /* spacing */
+    --space-smaller: 0.5rem;
     --space-small: 1rem;
     --space-medium: 1.5rem;
     --space-large: 3rem;
@@ -117,6 +119,22 @@ body { /* var försiktigt med att använda body. Should I change this? */
     background-color: var(--clr-transparent-red);
 }
 
+
+:is(h1, h2, h3, h4) {
+    font-family: var(--ff-headings);
+    font-weight: var(--fw-bold);
+}
+
+h1 {
+    font-size: var(--fs-larger-heading);
+    color: var(--clr-red);
+    margin-block-start: 3rem;
+}
+
+h2 {
+    font-size: var(--fs-large-heading);
+}
+
 .responsive-container {
     max-width: 600px;
     margin: auto;
@@ -130,6 +148,11 @@ body { /* var försiktigt med att använda body. Should I change this? */
 .flow > * + * {
     margin-block-start: var(--flow-space, 1.5em);
 }
+
+.flow-margins > * + * {
+    margin-inline: var(--space-small);
+}
+
 
 .flex-container {
     display: flex;
@@ -147,6 +170,15 @@ body { /* var försiktigt med att använda body. Should I change this? */
         width: 100%;
         height: 467px;
     }
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-large);
+    padding-block-end: var(--space-larger);
+    margin-block-end: var(--space-larger);
+
 }
 
 
@@ -274,6 +306,32 @@ body { /* var försiktigt med att använda body. Should I change this? */
 }
 
 
+.card {
+    --flow-space: var(--space-small);
+    border: solid 3px var(--clr-dark-red);
+    
+    > * + * {
+        margin-inline: var(--space-medium);
+    }
+    padding-block-end: var(--space-medium);
+}
+
+.card__heading {
+    color: var(--clr-red);
+    font-family: var(--ff-headings);
+    font-size: var(--fs-large-heading);
+
+    .link {
+        color: var(--clr-red);
+    }
+}
+
+.card__img {
+    width: 100%;
+    aspect-ratio: 1;
+}
+
+
 .hero {
     img {
         width: 100%;
@@ -295,24 +353,6 @@ body { /* var försiktigt med att använda body. Should I change this? */
     margin-block-end: var(--space-larger);
     --flow-space: 1.5rem;
 
-    > * + * {
-        margin-inline: var(--space-small);
-    }
-
-    :is(h1, h2, h3, h4) {
-        font-family: var(--ff-headings);
-        font-weight: var(--fw-bold);
-    }
-
-    h1 {
-        font-size: var(--fs-larger-heading);
-        color: var(--clr-red);
-        margin-block-start: 3rem;
-    }
-
-    h2 {
-        font-size: var(--fs-large-heading);
-    }
 }
 
 .recipe__section > * {
@@ -358,7 +398,16 @@ body { /* var försiktigt med att använda body. Should I change this? */
     }
 }
 
-        
+
+.card[data-state="vertical-lr"] {
+    writing-mode: vertical-lr;
+}
+
+
+.card[data-state="vertical-rl"] {
+    writing-mode: vertical-rl ;
+}
+
 /**********************************************************************/
 /* Media Queries */
 /**********************************************************************/
@@ -381,14 +430,13 @@ body { /* var försiktigt med att använda body. Should I change this? */
         max-width: 1280px;
     }
 
-    .recipe > * + * {
+    .flow-margins > * + * {
         margin-inline: 3rem;
     }
 
     .nav__list {
         flex-direction: row;
     }
-
 
     /* Side by side images. */
     .flex-container > * {
