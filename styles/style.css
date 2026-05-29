@@ -135,12 +135,6 @@ h2 {
     font-size: var(--fs-large-heading);
 }
 
-.responsive-container {
-    max-width: 600px;
-    margin: auto;
-    background-color: var(--clr-off-white);
-}
-
 /**********************************************************************/
 /* Composition */
 /**********************************************************************/
@@ -153,6 +147,11 @@ h2 {
     margin-inline: var(--space-small);
 }
 
+.responsive-container {
+    max-width: 600px;
+    margin: auto;
+    background-color: var(--clr-off-white);
+}
 
 .flex-container {
     display: flex;
