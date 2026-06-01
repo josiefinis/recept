@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+
+<html lang="sv">
+
+    <head>
+        <title>MWE</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style>
+            .container-1 {
+                container-type: size;
+                container-name: one;
+                block-size: 16rem;
+            }
+
+            .container-2 {
+                container-type: size;
+                container-name: two;
+                block-size: 16rem;
+            }
+
+            .card__heading {
+                @container (aspect-ratio > 1) {
+                    background-color: red;
+                }
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div class="container-1">
+            <article class="card">
+                <h2 class="card__heading">Heading 1</h2>
+                <p>lorem ipsum dolor sitt</p>
+            </article>
+
+            <article class="card">
+                <h2 class="card__heading">Heading 2</h2>
+                <p>lauren epsum solo shit</p>
+            </article>
+        </div>
+
+        <div class="container-2">
+            <article class="card">
+                <h2 class="card__heading">Heading 3</h2>
+                <p>dougus dippus deltoid dump</p>
+            </article>
+
+            <article class="card">
+                <h2 class="card__heading">Heading 4</h2>
+                <p>crampus krungus forest gump</p>
+            </article>
+        </div>
+    </body>
+</html>
