@@ -412,8 +412,8 @@ h2 {
 /* Media Queries */
 /**********************************************************************/
 
-/* Tablet (min width 768px */
-@media (min-width: 768px) {
+/* Tablet */
+@media (width > 768px) {
     .responsive-container {
         max-width: 800px;
     }
@@ -424,8 +424,8 @@ h2 {
 }
 
 
-/* Desktop (min width 1024px */
-@media (min-width: 1024px) {
+/* Desktop */
+@media (width > 1024px) {
     .responsive-container {
         max-width: 1280px;
     }
