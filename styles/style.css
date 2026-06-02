@@ -89,13 +89,13 @@ a:not([class]) {
     --fw-bold: 600;
 
     /* colors */
-    --clr-red: #a10000;
-    --clr-transparent-red: rgb(161 0 0 / 0.3);
-    --clr-off-white: #fcfcfc;
-    --clr-light-gray: #ebebeb;
-    --clr-black: #000000;
-    --clr-dark-red: #220000;
-    --clr-light-green: #6f6;
+    --clr-black: oklch(0 0 0);
+    --clr-light-gray: oklch(94% 0 0);
+    --clr-off-white: oklch(99% 0 0);
+    --clr-pancake-red: #a10000;
+    --clr-transparent-red: oklch(from var(--clr-pancake-red) l c h / 0.3);
+    --clr-dark-red: oklch(from var(--clr-pancake-red) 7% 80% h);
+    --clr-bright-green: oklch(from var(--clr-pancake-red) 100% 100% calc(h + 120)); 
 
     /* spacing */
     --space-smaller: 0.5rem;
@@ -127,7 +127,7 @@ body { /* var försiktigt med att använda body. Should I change this? */
 
 h1 {
     font-size: var(--fs-larger-heading);
-    color: var(--clr-red);
+    color: var(--clr-pancake-red);
     margin-block-start: 3rem;
 }
 
@@ -226,8 +226,8 @@ h2 {
 
 .skip-link {
     padding: var(--space-small);
-    background-color: var(--clr-light-green);
-    color: var(--clr-black);
+    background-color: var(--clr-bright-green);
+    color: contrast-color(var(--clr-bright-green));
     position: absolute;
     inset-block-start: -1000px;
 
@@ -299,14 +299,14 @@ h2 {
 }
 
 .card__heading {
-    color: var(--clr-red);
+    color: var(--clr-pancake-red);
     font-family: var(--ff-headings);
     font-size: clamp(1.5rem, 7cqi + 0.5rem, 10rem);
     hyphens: auto;
     margin-block-start: var(--space-medium);
 
     .link {
-        color: var(--clr-red);
+        color: var(--clr-pancake-red);
     }
 }
 
