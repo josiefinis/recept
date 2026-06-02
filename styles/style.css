@@ -90,7 +90,7 @@ a:not([class]) {
 
     /* colors */
     --clr-red: #a10000;
-    --clr-transparent-red: rgba(161, 0, 0, 0.3);
+    --clr-transparent-red: rgb(161 0 0 / 0.3);
     --clr-off-white: #fcfcfc;
     --clr-light-gray: #ebebeb;
     --clr-black: #000000;
