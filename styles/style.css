@@ -96,6 +96,9 @@ a:not([class]) {
     --clr-red-70: oklch(from var(--clr-pancake-red) 70% 0.1904 h);
     --clr-blue-22: oklch(from var(--clr-pancake-red) 22% 0.0656 calc(h + 240));
     --clr-green-85: oklch(from var(--clr-pancake-red) 85% 0.2383 calc(h + 120)); 
+    --clr-gray-23: oklch(23% 0 0);
+    --clr-gray-99: oklch(99% 0 0);
+    --clr-transparent-gray: oklch(50% 0 0 / 0.11);
 
     @media (color-gamut: p3) {
         --clr-pancake-red: oklch(0.4452 0.2056 29.23);
@@ -103,12 +106,14 @@ a:not([class]) {
         --clr-green-85: oklch(from var(--clr-pancake-red) 85% 0.3329 calc(h + 120)); 
     }
 
-    --clr-gray-94: oklch(94% 0 0);
-    --clr-gray-99: oklch(99% 0 0);
-
-    --clr-dark-text: oklch(0 0 0);
-    --clr-light-text: var(--clr-gray-99);
-    --clr-main-heading: var(--clr-pancake-red);
+    --clr-body-bg: var(--clr-transparent-red);
+    --clr-page: light-dark(var(--clr-gray-99), var(--clr-gray-23));
+    --clr-text: light-dark(black, var(--clr-gray-99));
+    --clr-banner-text: var(--clr-gray-99);
+    --clr-banner-bg: var(--clr-red-18);
+    --clr-main-heading: light-dark(var(--clr-pancake-red), var(--clr-red-70));
+    --clr-highlight-bg: var(--clr-transparent-gray);
+    --clr-card-border: oklch(from var(--clr-pancake-red) l 0.1 h);
 
     /* spacing */
     --space-smaller: 0.5rem;
@@ -125,11 +130,15 @@ a:not([class]) {
 /* Global */
 /**********************************************************************/
 
+:root {
+    color-scheme: light dark;
+}
+
 body { /* var försiktigt med att använda body. Should I change this? */
     font-family: var(--ff-main);
     font-size: var(--fs-normal);
-    color: var(--clr-dark-text);
-    background-color: var(--clr-transparent-red);
+    color: var(--clr-text);
+    background-color: var(--clr-body-bg);
 }
 
 
@@ -163,7 +172,7 @@ h2 {
 .responsive-container {
     max-width: 600px;
     margin: auto;
-    background-color: var(--clr-gray-99);
+    background-color: var(--clr-page);
 }
 
 .grid-container {
@@ -181,7 +190,7 @@ h2 {
 /**********************************************************************/
 
 .highlight {
-    background-color: var(--clr-gray-94);
+    background-color: var(--clr-highlight-bg);
     padding: var(--space-small);
 }
 
@@ -251,13 +260,13 @@ h2 {
 }
 
 .banner {
-    background-color: var(--clr-red-18);
-    color: var(--clr-light-text);
+    background-color: var(--clr-banner-bg);
+    color: var(--clr-banner-text);
     padding: var(--space-small);
 
 
     .link {
-        color: var(--clr-light-text);
+        color: var(--clr-banner-text);
         &:hover {
             text-decoration: underline;
             text-decoration-thickness: 3px;
@@ -303,7 +312,7 @@ h2 {
 .card {
     --flow-space: var(--space-small);
     container-type: inline-size;
-    border: solid 3px var(--clr-red-65);
+    border: solid 3px var(--clr-card-border);
     
     > * + * {
         margin-inline: var(--space-medium);
@@ -337,7 +346,7 @@ h2 {
         object-fit: cover;
         display: block;
         margin: auto;
-        border: 1px solid var(--clr-gray-99);
+        border: 1px solid var(--clr-page);
     }
 
     .hero__caption {
