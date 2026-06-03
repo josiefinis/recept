@@ -89,13 +89,19 @@ a:not([class]) {
     --fw-bold: 600;
 
     /* colors */
-    --clr-black: oklch(0 0 0);
-    --clr-light-gray: oklch(94% 0 0);
-    --clr-off-white: oklch(99% 0 0);
-    --clr-pancake-red: #a10000;
+    --clr-pancake-red: oklch(0.4452 0.1827 29.23);
     --clr-transparent-red: oklch(from var(--clr-pancake-red) l c h / 0.3);
-    --clr-dark-red: oklch(from var(--clr-pancake-red) 7% 80% h);
-    --clr-bright-green: oklch(from var(--clr-pancake-red) 100% 100% calc(h + 120)); 
+    --clr-red-18: oklch(from var(--clr-pancake-red) 18% 0.072 h);
+    --clr-red-65: oklch(from var(--clr-pancake-red) 65% 0.2361 h);
+    --clr-red-70: oklch(from var(--clr-pancake-red) 70% 0.1904 h);
+    --clr-blue-22: oklch(from var(--clr-pancake-red) 22% 0.0656 calc(h + 240));
+    --clr-green-85: oklch(from var(--clr-pancake-red) 85% 0.2383 calc(h + 120)); 
+    --clr-gray-94: oklch(94% 0 0);
+    --clr-gray-99: oklch(99% 0 0);
+
+    --clr-dark-text: oklch(0 0 0);
+    --clr-light-text: var(--clr-gray-99);
+    --clr-main-heading: var(--clr-pancake-red);
 
     /* spacing */
     --space-smaller: 0.5rem;
@@ -115,7 +121,7 @@ a:not([class]) {
 body { /* var försiktigt med att använda body. Should I change this? */
     font-family: var(--ff-main);
     font-size: var(--fs-normal);
-    color: var(--clr-black);
+    color: var(--clr-dark-text);
     background-color: var(--clr-transparent-red);
 }
 
@@ -127,7 +133,7 @@ body { /* var försiktigt med att använda body. Should I change this? */
 
 h1 {
     font-size: var(--fs-larger-heading);
-    color: var(--clr-pancake-red);
+    color: var(--clr-main-heading);
     margin-block-start: 3rem;
 }
 
@@ -150,7 +156,7 @@ h2 {
 .responsive-container {
     max-width: 600px;
     margin: auto;
-    background-color: var(--clr-off-white);
+    background-color: var(--clr-gray-99);
 }
 
 .grid-container {
@@ -168,7 +174,7 @@ h2 {
 /**********************************************************************/
 
 .highlight {
-    background-color: var(--clr-light-gray);
+    background-color: var(--clr-gray-94);
     padding: var(--space-small);
 }
 
@@ -226,8 +232,8 @@ h2 {
 
 .skip-link {
     padding: var(--space-small);
-    background-color: var(--clr-bright-green);
-    color: contrast-color(var(--clr-bright-green));
+    background-color: var(--clr-green-85);
+    color: contrast-color(var(--clr-green-85));
     position: absolute;
     inset-block-start: -1000px;
 
@@ -238,13 +244,13 @@ h2 {
 }
 
 .banner {
-    background-color: var(--clr-dark-red);
-    color: var(--clr-off-white);
+    background-color: var(--clr-red-18);
+    color: var(--clr-light-text);
     padding: var(--space-small);
 
 
     .link {
-        color: var(--clr-off-white);
+        color: var(--clr-light-text);
         &:hover {
             text-decoration: underline;
             text-decoration-thickness: 3px;
@@ -290,7 +296,7 @@ h2 {
 .card {
     --flow-space: var(--space-small);
     container-type: inline-size;
-    border: solid 3px var(--clr-dark-red);
+    border: solid 3px var(--clr-red-65);
     
     > * + * {
         margin-inline: var(--space-medium);
@@ -299,14 +305,14 @@ h2 {
 }
 
 .card__heading {
-    color: var(--clr-pancake-red);
+    color: var(--clr-main-heading);
     font-family: var(--ff-headings);
     font-size: clamp(1.5rem, 7cqi + 0.5rem, 10rem);
     hyphens: auto;
     margin-block-start: var(--space-medium);
 
     .link {
-        color: var(--clr-pancake-red);
+        color: var(--clr-main-heading);
     }
 }
 
@@ -324,7 +330,7 @@ h2 {
         object-fit: cover;
         display: block;
         margin: auto;
-        border: 1px solid var(--clr-off-white);
+        border: 1px solid var(--clr-gray-99);
     }
 
     .hero__caption {
