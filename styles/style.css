@@ -91,11 +91,18 @@ a:not([class]) {
     /* colors */
     --clr-pancake-red: oklch(0.4452 0.1827 29.23);
     --clr-transparent-red: oklch(from var(--clr-pancake-red) l c h / 0.3);
-    --clr-red-18: oklch(from var(--clr-pancake-red) 18% 0.072 h);
+    --clr-red-18: oklch(from var(--clr-pancake-red) 18% 0.0729 h);
     --clr-red-65: oklch(from var(--clr-pancake-red) 65% 0.2361 h);
     --clr-red-70: oklch(from var(--clr-pancake-red) 70% 0.1904 h);
     --clr-blue-22: oklch(from var(--clr-pancake-red) 22% 0.0656 calc(h + 240));
     --clr-green-85: oklch(from var(--clr-pancake-red) 85% 0.2383 calc(h + 120)); 
+
+    @media (color-gamut: p3) {
+        --clr-pancake-red: oklch(0.4452 0.2056 29.23);
+        --clr-red-18: oklch(from var(--clr-pancake-red) 18% 0.0881 h);
+        --clr-green-85: oklch(from var(--clr-pancake-red) 85% 0.3329 calc(h + 120)); 
+    }
+
     --clr-gray-94: oklch(94% 0 0);
     --clr-gray-99: oklch(99% 0 0);
 
