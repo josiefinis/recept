@@ -31,9 +31,18 @@ body {
 
 /* Set shorter line heights on headings and interactive elements (Bell, 2023) */
 h1, h2, h3, h4,
-button, input, label {
+button, input, label, textarea {
     line-height: 1.1;
 }
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
 
 img, picture, video, canvas, svg { 
     display: block;
@@ -115,6 +124,7 @@ a:not([class]) {
     --clr-main-heading: light-dark(var(--clr-pancake-red), var(--clr-red-70));
     --clr-highlight-bg: var(--clr-transparent-gray);
     --clr-card-border: oklch(from var(--clr-pancake-red) l 0.1 h);
+    --clr-accent: light-dark(var(--clr-pancake-red), var(--clr-red-70));
 
     /* spacing */
     --space-smaller: 0.5rem;
@@ -158,6 +168,11 @@ h2 {
     font-size: var(--fs-large-heading);
 }
 
+:focus-visible {
+  outline: 2px solid var(--clr-accent);
+  outline-offset: 2px;
+}
+
 /**********************************************************************/
 /* Composition */
 /**********************************************************************/
@@ -173,7 +188,22 @@ h2 {
 .responsive-container {
     max-width: 600px;
     margin: auto;
-    background-color: var(--clr-page);
+    background-color: var(--clr-page);         /* TODO: move these page stylings to separate class? Nothing to do with responsiveness. */
+    padding-block-end: var(--space-larger);
+    margin-block-end: var(--space-larger);
+}
+
+.stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-medium);
+    align-items: center;
+}
+
+.columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--min-column-inline-size, 30ch), 1fr));
+
 }
 
 .grid-container {
@@ -181,8 +211,6 @@ h2 {
     grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
     grid-auto-rows: minmax(38ch, 1fr);
     gap: var(--space-large);
-    padding-block-end: var(--space-larger);
-    margin-block-end: var(--space-larger);
 }
 
 
@@ -348,13 +376,38 @@ h2 {
     font-size: clamp(0.8rem, 2cqi + 0.5rem, 1rem);
 }
 
-
 .card__img {
     inline-size: 100%;
     aspect-ratio: 16/9;
     min-block-size: 8rem;
     flex: none;
 }
+
+
+.form {
+    display: grid;
+    gap: var(--space-small);
+}
+
+.form-group {
+    display: grid;
+    gap: 0.2em;
+}
+
+.radio-fieldset {
+    --min-column-inline-size: 20ch;
+}
+
+.button {
+    /* TODO: larger button. better alignent. fix hover behaviour. */
+    color: contrast-color(var(--clr-accent));
+
+    &:hover {
+        background-color: var(--clr-accent);
+        color: contrast-color(var(--clr-accent));
+    }
+}
+
 
 
 .hero {
@@ -374,8 +427,6 @@ h2 {
 }
 
 .recipe {
-    padding-block-end: var(--space-larger);
-    margin-block-end: var(--space-larger);
     --flow-space: 1.5rem;
 
 }
