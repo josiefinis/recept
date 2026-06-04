@@ -125,6 +125,7 @@ a:not([class]) {
     --clr-highlight-bg: var(--clr-transparent-gray);
     --clr-card-border: oklch(from var(--clr-pancake-red) l 0.1 h);
     --clr-accent: light-dark(var(--clr-pancake-red), var(--clr-red-70));
+    --clr-button: light-dark(oklch(from var(--clr-page) calc(l - 0.1) c h), oklch(from var(--clr-page) calc(l + 0.1) c h));
 
     /* spacing */
     --space-smaller: 0.5rem;
@@ -399,8 +400,9 @@ h2 {
 }
 
 .button {
-    /* TODO: larger button. better alignent. fix hover behaviour. */
-    color: contrast-color(var(--clr-accent));
+    /* TODO: larger button. better alignent. */
+    background-color: var(--clr-button);
+    color: contrast-color(var(--clr-button));
 
     &:hover {
         background-color: var(--clr-accent);
