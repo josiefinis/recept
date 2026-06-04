@@ -2,7 +2,12 @@
 ---
 Besök [recept sida](https://josiefinis.github.io/recept).
 
-Recept sida för frontendutvecklare utbildning hos Lexicon.
+## Formulär
+klicka 'logga in' för ett enkelt formulär
+sedan klicka 'skapa konto' för ett större formulär
+
+
+## Recept sida för frontendutvecklare utbildning hos Lexicon.
 - HTML5 & CSS3
 - Semantisk HTML
 - CUBE
