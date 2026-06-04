@@ -36,13 +36,18 @@
                     <h1>Skapa konto</h1>
                     <form action="#" method="post" class="form">
                         <div class="form-group">
-                            <label for="new-username">Användarnamn</label>
+                            <label for="new-username">Välj användarnamn</label>
                             <input type="text" id="new-username" name="new-username" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="first-name">Lösenord</label>
-                            <input type="text" id="password" name="password" required autocomplete="new-password">
+                            <label for="new-password">Välj lösenord</label>
+                            <input type="text" id="new-password" name="new-password" required autocomplete="new-password">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="repeat-password">Upprepa lösenord</label>
+                            <input type="text" id="repeat-password" name="repeat-password" required autocomplete="new-password">
                         </div>
 
                         <div class="form-group">
@@ -71,8 +76,8 @@
                             <input type="tel" id="phone" name="phone" autocomplete="tel">
                         </div>
                     
-                        <div class="form-group">
-                            <label for="nickname">Smeknamn</label>
+                        <div class="form-group"> <!-- TODO: autofill with username -->
+                            <label for="nickname">Välj smeknamn</label>
                             <input type="text" id="nickname" name="nickname" required>
                         </div>
 
@@ -163,7 +168,7 @@
                         </div>
 
                         <div class="button">
-                            <button type="submit">Create account</button>
+                            <button type="submit">Skapa konto</button>
                         </div>
 
                     </form>
