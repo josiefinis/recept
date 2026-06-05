@@ -362,6 +362,12 @@ h2 {
     :last-child {
         margin-block-end: var(--space-medium);
     }
+
+   &:focus-within {
+      outline: 4px solid var(--clr-accent);
+      outline-offset: 2px;
+      background-color: var(--clr-highlight-bg);
+   }
 }
 
 .card__heading {
@@ -373,6 +379,10 @@ h2 {
 
     .link {
         color: var(--clr-main-heading);
+    }
+
+    .link:focus {
+        outline: none;
     }
 }
 
@@ -417,6 +427,11 @@ h2 {
     margin-block: var(--space-small);
 
     &:hover {
+        background-color: var(--clr-accent);
+        color: contrast-color(var(--clr-accent));
+    }
+
+    &:focus-visible {
         background-color: var(--clr-accent);
         color: contrast-color(var(--clr-accent));
     }
