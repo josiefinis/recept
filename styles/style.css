@@ -93,7 +93,7 @@ a:not([class]) {
     --fs-larger: 1.75rem;
     --fs-large: 1.5rem;
     --fs-normal: 1rem;
-    --fs-small: 0.75rem;
+    --fs-small: 0.9rem;
 
     /* font weights */
     --fw-bold: 600;
@@ -272,6 +272,10 @@ h2 {
     margin-inline: var(--space-larger);
 }
 
+.clr-accent {
+    color: var(--clr-accent);
+}
+
 /**********************************************************************/
 /* Blocks */
 /**********************************************************************/
@@ -390,10 +394,16 @@ h2 {
     gap: var(--space-small);
 }
 
-.form-group {
+.form__group {
     display: grid;
     gap: 0.2em;
 }
+
+.form__info {
+    font-size: var(--fs-small);
+    color: var(--clr-accent);
+}
+
 
 .radio-fieldset {
     --min-column-inline-size: 20ch;
@@ -509,6 +519,12 @@ h2 {
         flex: auto;
     }
 }
+
+.form__label[data-state="required-field"]::after {
+    color: var(--clr-accent);
+    content: " *";
+}
+
 
 /**********************************************************************/
 /* Media Queries */
