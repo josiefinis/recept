@@ -403,6 +403,8 @@ h2 {
     /* TODO: larger button. better alignent. */
     background-color: var(--clr-button);
     color: contrast-color(var(--clr-button));
+    padding-block: var(--space-small);
+    margin-block: var(--space-small);
 
     &:hover {
         background-color: var(--clr-accent);
