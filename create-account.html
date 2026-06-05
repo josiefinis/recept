@@ -37,17 +37,30 @@
                     <form action="#" method="post" class="form">
                         <div class="form-group">
                             <label for="new-username">Välj användarnamn</label>
-                            <input type="text" id="new-username" name="new-username" required>
+                            <input type="text" id="new-username" name="new-username" required
+                                   minlength="3"
+                                   maxlength="20"
+                                   pattern="[\w\d_]*" 
+                                   placeholder="t.ex. Pannmela_123"
+                                   > 
+                                   <!-- TODO: check regex matches Swedish alphabet -->
+                                   <!-- TODO: inform user what a valid user name is -->
                         </div>
 
                         <div class="form-group">
                             <label for="new-password">Välj lösenord</label>
-                            <input type="text" id="new-password" name="new-password" required autocomplete="new-password">
+                            <input type="password" id="new-password" name="new-password" required autocomplete="new-password" 
+                                   minlength="8"
+                                   maxlength="20"
+                                   pattern="(?=.*\d)(?=.*[A-ZÄÖÅ])(?=.*[a-zäöå])(?=\S+$).*"
+                            > 
+                            <!-- TODO: inform user what a valid password is -->
+                            <!-- TODO: double, triple check regex -->
                         </div>
 
                         <div class="form-group">
                             <label for="repeat-password">Upprepa lösenord</label>
-                            <input type="text" id="repeat-password" name="repeat-password" required autocomplete="new-password">
+                            <input type="password" id="repeat-password" name="repeat-password" required autocomplete="new-password">
                         </div>
 
                         <div class="form-group">
@@ -74,11 +87,12 @@
                         <div class="form-group">
                             <label for="phone">Telefon</label>
                             <input type="tel" id="phone" name="phone" autocomplete="tel">
+                            <!-- TODO: valid number pattern -->
                         </div>
                     
                         <div class="form-group"> <!-- TODO: autofill with username -->
                             <label for="nickname">Välj smeknamn</label>
-                            <input type="text" id="nickname" name="nickname" required>
+                            <input type="text" id="nickname" name="nickname" required maxlength="20" autocomplete="nickname">
                         </div>
 
                         <div class="form-group">
@@ -105,7 +119,7 @@
 
                         <div class="form-group">
                             <label for="profile-text">Om dig</label>
-                            <textarea type="textarea" id="profile-text" name="profile-text" rows="5" placeholder="Berätta gärna något kort om dig själv."></textarea>
+                            <textarea type="textarea" id="profile-text" name="profile-text" rows="5" maxlength="2000" placeholder="Berätta gärna något kort om dig själv."></textarea>
                         </div>
 
                         <fieldset class="radio-fieldset | columns">
@@ -162,8 +176,8 @@
 
                         </fieldset>
 
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="terms-of-service" name="terms-of-service">
+                        <div class="checkbox-group"> 
+                            <input type="checkbox" id="terms-of-service" name="terms-of-service" required> 
                             <label for="terms-of-service">Jag har läst och godkänner <a class="link" href="#">användarvillkoren</a>  samt <a class="link" href="#">trivselreglerna</a>.</label>
                         </div>
 
