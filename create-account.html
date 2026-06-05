@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+
+<html lang="sv">
+
+    <head>
+        <title>bara Pannkakor! &endash Skapa konto</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=josefin-sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i|twinkle-star:400" rel="stylesheet"/>
+        <link rel="stylesheet" href="./styles/style.css">
+    </head>
+
+    <body>
+        <div class="responsive-container">
+            <a class="skip-link" href="#main">Till innehåll</a>
+            <header class="banner">
+                <nav>
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="logo | link" aria-label="Gå till bara pannkakor startsidan" href="index.html">
+                                <img class="logomark" src="images/logo-80.png" alt="bara pannkakor"><span class="logotype">bara Pannkakor!</span>
+                            </a>
+                        </li>
+                        <li class="nav__item"><a class="link" href="recept.html">Recept</a></li>
+                        <li class="nav__item"><a class="link" href="#">Forum</a></li>
+                        <li class="nav__item"><a class="link" href="#">Om oss</a></li>
+                        <li class="nav__item"><a class="link" href="log-in.html">Logga in</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <main id="main">
+                <div class="stack | flow-margins">
+                    <h1>Skapa konto</h1>
+                    <form action="#" method="post" class="form">
+                        <span>Obligatoriska fält markeras med <span class="clr-accent">*</span></span>
+                        <div class="form__group">
+                            <label class="form__label" for="new-username" data-state="required-field">Välj användarnamn</label>
+                            <input type="text" id="new-username" name="new-username" required
+                                   minlength="3"
+                                   maxlength="20"
+                                   pattern="[\wÄÖÅäöå\d_]*" 
+                                   placeholder="t.ex. Pannmela_123"
+                                   aria-describedby="username-requirements"
+                                   > 
+                            <span id="username-requirements" class="form__info">Får endast bestå av bokstäver, siffror och understreck.</span>
+                        </div>
+
+                        <div class="form__group">
+                            <label class="form__label" for="new-password" data-state="required-field">Välj lösenord</label>
+                            <input type="password" id="new-password" name="new-password" required autocomplete="new-password" 
+                                   minlength="8"
+                                   maxlength="20"
+                                   pattern="(?=.*\d)(?=.*[A-ZÄÖÅ])(?=.*[a-zäöå])(?=\S+$).*"
+                                   aria-describedby="password-requirements"
+                            > 
+                            <span id="password-requirements" class="form__info">8&ndash;20 karaktär. Måste innehålla siffror och både stora och små bokstäver.</span>
+                        </div>
+
+                        <div class="form__group">
+                            <label class="form__label" for="repeat-password" data-state="required-field">Upprepa lösenord</label>
+                            <input type="password" id="repeat-password" name="repeat-password" required autocomplete="new-password">
+                        </div>
+
+                        <div class="form__group">
+                            <label class="form__label" for="first-name" data-state="required-field">Förnamn</label>
+                            <input type="text" id="first-name" name="first-name" required autocomplete="given-name">
+                        </div>
+
+                        <div class="form__group">
+                            <label class="form__label" for="last-name" data-state="required-field">Efternamn</label>
+                            <input type="text" id="last-name" name="last-name" required autocomplete="family-name">
+                        </div>
+
+                        <div class="form__group">
+                            <label class="form__label" for="birthday" data-state="required-field">Födelsedag</label>
+                            <input type="date" id="birthday" name="birthday" required autocomplete="bday"> 
+                            <!-- chrome devtools flags 'bday' as non standard but see https://www.w3.org/TR/WCAG21/#input-purposes -->
+                        </div>
+                    
+                        <div class="form__group">
+                            <label class="form__label" for="email" data-state="required-field">e-post</label>
+                            <input type="email" id="email" name="email" required autocomplete="email">
+                        </div>
+                    
+                        <div class="form__group">
+                            <label class="form__label" for="phone">Telefon</label>
+                            <input type="tel" id="phone" name="phone" autocomplete="tel">
+                        </div>
+                    
+                        <div class="form__group"> 
+                            <label class="form__label" for="nickname">Välj smeknamn</label>
+                            <input type="text" id="nickname" name="nickname" maxlength="20" autocomplete="nickname" aria-describedby="nickname-info">
+                            <span id="nickname-info" class="form__info">Visas för andra användare. Kan ändras senare.</span>
+                        </div>
+
+                        <div class="form__group">
+                            <label class="form__label" for="country">Land</label>
+                            <select id="country" name="country" autocomplete="country-name">
+                                <option value="" disabled selected>Välj ett alternativ</option>
+                                <option value="international">International</option>
+                                <optgroup label="Nordic">
+                                    <option value="Danmark">Danmark</option>
+                                    <option value="Finland">Finland</option>
+                                    <option value="Färöarna">Färöarna</option>
+                                    <option value="Island">Island</option>
+                                    <option value="Norge">Norge</option>
+                                    <option value="Sverige">Sverige</option>
+                                    <option value="Åland">Åland</option>
+                                </optgroup>
+                                <optgroup label="Europa">
+                                    <option value="Andorra">Andorra</option>
+                                    <option value="Albanien">Albanien</option>
+                                    <option value="ni fattar">ni fattar...</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div class="form__group">
+                            <label class="form__label" for="profile-text">Om dig</label>
+                            <textarea type="textarea" id="profile-text" name="profile-text" rows="5" maxlength="2000" placeholder="Berätta gärna något kort om dig själv."></textarea>
+                        </div>
+
+                        <fieldset class="radio-fieldset | columns">
+                            <legend>Välj en</legend>
+                            <div class="radio-group">
+                                <input type="radio" id="cast-iron" name="material-question" value="gjutjärn">
+                                <label class="form__label" for="cast-iron">Gjutjärn</label>
+                            </div>
+
+                            <div class="radio-group">
+                                <input type="radio" id="carbon-steel" name="material-question" value="kolstål">
+                                <label class="form__label" for="carbon-steel">Kolstål</label>
+                            </div>
+
+                            <div class="radio-group">
+                                <input type="radio" id="stainless-steel" name="material-question" value="rostfritt-stål">
+                                <label class="form__label" for="stainless-steel">Rostfritt stål</label>
+                            </div>
+
+                            <div class="radio-group">
+                                <input type="radio" id="alumninium" name="material-question" value="alumninium">
+                                <label class="form__label" for="alumninium">Aluminium</label>
+                            </div>
+
+                            <div class="radio-group">
+                                <input type="radio" id="titan" name="material-question" value="titan">
+                                <label class="form__label" for="titan">Titan</label>
+                            </div>
+
+                            <div class="radio-group">
+                                <input type="radio" id="keramisk" name="material-question" value="keramisk">
+                                <label class="form__label" for="keramisk">Keramisk</label>
+                            </div>
+
+                            <div class="radio-group">
+                                <input type="radio" id="teflon" name="material-question" value="teflon">
+                                <label class="form__label" for="teflon">Teflon</label>
+                            </div>
+
+                            <div class="radio-group">
+                                <input type="radio" id="glas" name="material-question" value="glas">
+                                <label class="form__label" for="glas">Glas</label>
+                            </div>
+
+                            <div class="radio-group">
+                                <input type="radio" id="hexclad" name="material-question" value="hexclad">
+                                <label class="form__label" for="hexclad">Hexclad</label>
+                            </div>
+
+                            <div class="radio-group">
+                                <input type="radio" id="enamelerad" name="material-question" value="enamelerad">
+                                <label class="form__label" for="enamelerad">Emaljerad</label>
+                            </div>
+
+                        </fieldset>
+
+                        <div class="checkbox-group"> 
+                            <input type="checkbox" id="terms-of-service" name="terms-of-service" required> 
+                            <label class="form__label" for="terms-of-service" data-state="required-field">Jag har läst och godkänner <a class="link" href="#">användarvillkoren</a>  samt <a class="link" href="#">trivselreglerna</a>.</label>
+                        </div>
+
+                        <button class="button" type="submit">Skapa konto</button>
+
+                    </form>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>
