@@ -319,6 +319,7 @@ h2 {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    row-gap: var(--space-small);
 }
 
 .nav__item {
